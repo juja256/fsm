@@ -6,6 +6,7 @@
 #define SIG_SUCCESS 0
 
 class fsmFileMask {
+private:
 	std::string mask;
 	struct state {
 		int n;
@@ -19,7 +20,7 @@ class fsmFileMask {
 	} *states;
 	int states_size;
 	state* cur;
-protected:		
+		
 	state* nextState() {
 		return &(this->states[this->cur->n + 1]);
 	}
